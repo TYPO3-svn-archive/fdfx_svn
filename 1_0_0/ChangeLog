@@ -1,0 +1,14 @@
+(add new changes on top of this file)
+08-03-22 Peter Russ <peter.russ@4many.net>
+	* moved files from typo3temp/ to uploads/tx_fdfxsvn/
+	* changed some default presets presets
+08-03-21 Peter Russ <peter.russ@4many.net>
+	* sort list alphabetically
+	* include global now
+	* added ftp upload to deploi to
+06-06-25 Peter Russ <peter.russ@4many.net>
+ 	* reversed array to display list
+06-05-12 Peter Russ <peter.russ@4many.net>
+    * added feature for convenience to show button after update
+06-04-24 Peter Russ <peter.russ@4many.net>
+	* Initial release
