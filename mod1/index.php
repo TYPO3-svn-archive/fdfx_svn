@@ -42,6 +42,7 @@ class tx_fdfxsvn_module1 extends t3lib_SCbase
 	var $extensionInfoArray;
 	var $msg=array();
 	var $error=false;
+	var $extDir='uploads/tx_fdfxsvn/';
 	/**
 	 *
 	 */
@@ -528,12 +529,11 @@ class tx_fdfxsvn_module1 extends t3lib_SCbase
 	}
 	function _loadVersions()
 	{
-		$extDir = 'typo3temp/';
 		$this->versions = false;
-		if (@ is_dir(PATH_site.$extDir))
+		if (@ is_dir(PATH_site.$this->extDir))
 		{
 
-			$file = t3lib_div::getFileAbsFileName($extDir.'fdfx_svn-versions.'.$GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'].'.ser');
+			$file = t3lib_div::getFileAbsFileName($this->extDir.'fdfx_svn-versions.'.$GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'].'.ser');
 			if (@ is_file($file))
 			{
 				$this->versions = unserialize(t3lib_div::getURL($file));
@@ -544,11 +544,10 @@ class tx_fdfxsvn_module1 extends t3lib_SCbase
 	{
 		if ($this->versions)
 		{
-			$extDir = 'typo3temp/';
-			if (@ is_dir(PATH_site.$extDir))
+			if (@ is_dir(PATH_site.$this->extDir))
 			{
 				unset ($this->versions['']);
-				$file = t3lib_div::getFileAbsFileName($extDir.'fdfx_svn-versions.'.$GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'].'.ser');
+				$file = t3lib_div::getFileAbsFileName($this->extDir.'fdfx_svn-versions.'.$GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'].'.ser');
 				t3lib_div::writeFile($file,serialize($this->versions));
 			}
 		}
