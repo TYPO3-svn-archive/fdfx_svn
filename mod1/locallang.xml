@@ -15,7 +15,7 @@
             <label index="function3">Branches local</label>
             <label index="function4">Branches global</label>
             <label index="f1_header">Get latest version from SVN:</label>
-            <label index="f1_comment">Update current TYPO3 installation with lastest version from the project svn.</label>
+            <label index="f1_comment">Update current TYPO3 installation with latest version from the project svn.</label>
             <label index="f1_submit">update current</label>
             <label index="f1_error_no_code">ERROR: No code found to run update</label>
             <label index="f2_header">Send email notification:</label>

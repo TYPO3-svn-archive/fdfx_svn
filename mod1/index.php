@@ -156,7 +156,9 @@ class tx_fdfxsvn_module1 extends t3lib_SCbase
 				{
 					if ($this->conf['code'])
 					{
-						$content .= system(escapeshellcmd($this->conf['code']));
+						$output=array();
+						exec(escapeshellcmd($this->conf['code']),$output,$returnVar);
+						$content .= join('<br/>',$output).'<br/>';
 					}
 					else
 					{
@@ -300,6 +302,7 @@ class tx_fdfxsvn_module1 extends t3lib_SCbase
 					{
 						if (@ftp_login($ftpId,$this->conf['ftpUser'],$this->conf['ftpPassword']))
 						{
+							ftp_pasv($ftpId,true); #turn on passive mode
 							$dir=($type=='local')?$this->conf['ftpPathLocal']:$this->conf['ftpPathGlobal'];
 							if (@ftp_chdir($ftpId,$dir))
 							{

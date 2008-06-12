@@ -1,4 +1,7 @@
 (add new changes on top of this file)
+08-06-12 Peter Russ<peter.russ@4many.net>
+	* Activate passive mode
+	* disabled timeout
 08-03-22 Peter Russ <peter.russ@4many.net>
 	* moved files from typo3temp/ to uploads/tx_fdfxsvn/
 	* changed some default presets presets
